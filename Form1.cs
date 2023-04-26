@@ -37,7 +37,7 @@ namespace Ejercicio25
         private void AddNumberOfPeople()
         {
             party.NumberOfPeople = (int)numericUpDownPeople.Value;
-            Refresh();
+            SetPrice();
         }
 
         private void TabControlTypeOfParty_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace Ejercicio25
                 };
             }
 
-            Refresh();
+            SetPrice();
         }
 
         private bool IsDinnerSelected() => tabControlTypeOfParty.SelectedIndex == 0;
@@ -69,21 +69,21 @@ namespace Ejercicio25
         private void CheckBoxLuxuryDecoration_CheckedChanged(object sender, EventArgs e)
         {
             party.StyleDecorationStdOrLuxe = checkBoxLuxuryDecoration.Checked;
-            Refesh();
+            SetPrice();
         }
 
         private void CheckBoxHealthyOption_CheckedChanged(object sender, EventArgs e)
         {
             ((Dinner)party).HealthyOption = checkBoxHealthyOption.Checked;
-            Refresh();
+            SetPrice();
         }
 
         private void CakeTextBox_TextChanged(object sender, EventArgs e)
         {
             ((Birthday)party).CakeText = cakeTextBox.Text;
-            Refesh();
+            SetPrice();
         }
-        private void Refesh()
+        private void SetPrice()
         {
             textBoxPrice.Text = party.CalculatePrice().ToString();
         }
