@@ -28,153 +28,168 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabDinner = new System.Windows.Forms.TabPage();
-            this.checkBoxHealthyOption = new System.Windows.Forms.CheckBox();
-            this.tabBirthday = new System.Windows.Forms.TabPage();
-            this.CakeTextBox = new System.Windows.Forms.TextBox();
-            this.labelCakeText = new System.Windows.Forms.Label();
-            this.labelNumberOfPeople = new System.Windows.Forms.Label();
-            this.numericUpDownPeople = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxLuxuryDecoration = new System.Windows.Forms.CheckBox();
-            this.labelBudget = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
-            this.tabDinner.SuspendLayout();
-            this.tabBirthday.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPeople)).BeginInit();
-            this.SuspendLayout();
+            tabControlTypeOfParty = new TabControl();
+            tabDinner = new TabPage();
+            checkBoxHealthyOption = new CheckBox();
+            tabBirthday = new TabPage();
+            cakeTextBox = new TextBox();
+            labelCakeText = new Label();
+            labelNumberOfPeople = new Label();
+            numericUpDownPeople = new NumericUpDown();
+            checkBoxLuxuryDecoration = new CheckBox();
+            labelBudget = new Label();
+            textBoxPrice = new TextBox();
+            tabControlTypeOfParty.SuspendLayout();
+            tabDinner.SuspendLayout();
+            tabBirthday.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPeople).BeginInit();
+            SuspendLayout();
             // 
-            // tabControl1
+            // tabControlTypeOfParty
             // 
-            this.tabControl1.Controls.Add(this.tabDinner);
-            this.tabControl1.Controls.Add(this.tabBirthday);
-            this.tabControl1.Location = new System.Drawing.Point(74, 355);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(946, 401);
-            this.tabControl1.TabIndex = 0;
+            tabControlTypeOfParty.Controls.Add(tabDinner);
+            tabControlTypeOfParty.Controls.Add(tabBirthday);
+            tabControlTypeOfParty.Location = new Point(77, 164);
+            tabControlTypeOfParty.Margin = new Padding(2);
+            tabControlTypeOfParty.Name = "tabControlTypeOfParty";
+            tabControlTypeOfParty.SelectedIndex = 0;
+            tabControlTypeOfParty.Size = new Size(395, 179);
+            tabControlTypeOfParty.TabIndex = 0;
+            tabControlTypeOfParty.SelectedIndexChanged += TabControlTypeOfParty_SelectedIndexChanged;
             // 
             // tabDinner
             // 
-            this.tabDinner.Controls.Add(this.checkBoxHealthyOption);
-            this.tabDinner.Location = new System.Drawing.Point(8, 46);
-            this.tabDinner.Name = "tabDinner";
-            this.tabDinner.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDinner.Size = new System.Drawing.Size(930, 347);
-            this.tabDinner.TabIndex = 0;
-            this.tabDinner.Text = "Cenas";
-            this.tabDinner.UseVisualStyleBackColor = true;
+            tabDinner.Controls.Add(checkBoxHealthyOption);
+            tabDinner.Location = new Point(4, 34);
+            tabDinner.Margin = new Padding(2);
+            tabDinner.Name = "tabDinner";
+            tabDinner.Padding = new Padding(2);
+            tabDinner.Size = new Size(387, 141);
+            tabDinner.TabIndex = 0;
+            tabDinner.Text = "Cenas";
+            tabDinner.UseVisualStyleBackColor = true;
             // 
             // checkBoxHealthyOption
             // 
-            this.checkBoxHealthyOption.AutoSize = true;
-            this.checkBoxHealthyOption.Location = new System.Drawing.Point(33, 33);
-            this.checkBoxHealthyOption.Name = "checkBoxHealthyOption";
-            this.checkBoxHealthyOption.Size = new System.Drawing.Size(231, 36);
-            this.checkBoxHealthyOption.TabIndex = 0;
-            this.checkBoxHealthyOption.Text = "Opción saludable";
-            this.checkBoxHealthyOption.UseVisualStyleBackColor = true;
+            checkBoxHealthyOption.AutoSize = true;
+            checkBoxHealthyOption.Location = new Point(21, 52);
+            checkBoxHealthyOption.Margin = new Padding(2);
+            checkBoxHealthyOption.Name = "checkBoxHealthyOption";
+            checkBoxHealthyOption.Size = new Size(176, 29);
+            checkBoxHealthyOption.TabIndex = 0;
+            checkBoxHealthyOption.Text = "Opción saludable";
+            checkBoxHealthyOption.UseVisualStyleBackColor = true;
+            checkBoxHealthyOption.CheckedChanged += CheckBoxHealthyOption_CheckedChanged;
             // 
             // tabBirthday
             // 
-            this.tabBirthday.Controls.Add(this.CakeTextBox);
-            this.tabBirthday.Controls.Add(this.labelCakeText);
-            this.tabBirthday.Location = new System.Drawing.Point(8, 46);
-            this.tabBirthday.Name = "tabBirthday";
-            this.tabBirthday.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBirthday.Size = new System.Drawing.Size(930, 347);
-            this.tabBirthday.TabIndex = 1;
-            this.tabBirthday.Text = "Cumpleaños";
-            this.tabBirthday.UseVisualStyleBackColor = true;
+            tabBirthday.Controls.Add(cakeTextBox);
+            tabBirthday.Controls.Add(labelCakeText);
+            tabBirthday.Location = new Point(4, 34);
+            tabBirthday.Margin = new Padding(2);
+            tabBirthday.Name = "tabBirthday";
+            tabBirthday.Padding = new Padding(2);
+            tabBirthday.Size = new Size(387, 141);
+            tabBirthday.TabIndex = 1;
+            tabBirthday.Text = "Cumpleaños";
+            tabBirthday.UseVisualStyleBackColor = true;
             // 
-            // CakeTextBox
+            // cakeTextBox
             // 
-            this.CakeTextBox.Location = new System.Drawing.Point(288, 57);
-            this.CakeTextBox.MaxLength = 16;
-            this.CakeTextBox.Name = "CakeTextBox";
-            this.CakeTextBox.Size = new System.Drawing.Size(450, 39);
-            this.CakeTextBox.TabIndex = 1;
+            cakeTextBox.Location = new Point(21, 57);
+            cakeTextBox.Margin = new Padding(2);
+            cakeTextBox.MaxLength = 16;
+            cakeTextBox.Name = "cakeTextBox";
+            cakeTextBox.Size = new Size(347, 31);
+            cakeTextBox.TabIndex = 1;
+            cakeTextBox.TextChanged += CakeTextBox_TextChanged;
             // 
             // labelCakeText
             // 
-            this.labelCakeText.AutoSize = true;
-            this.labelCakeText.Location = new System.Drawing.Point(73, 57);
-            this.labelCakeText.Name = "labelCakeText";
-            this.labelCakeText.Size = new System.Drawing.Size(190, 32);
-            this.labelCakeText.TabIndex = 0;
-            this.labelCakeText.Text = "Texto en la tarta:";
+            labelCakeText.AutoSize = true;
+            labelCakeText.Location = new Point(4, 18);
+            labelCakeText.Margin = new Padding(2, 0, 2, 0);
+            labelCakeText.Name = "labelCakeText";
+            labelCakeText.Size = new Size(140, 25);
+            labelCakeText.TabIndex = 0;
+            labelCakeText.Text = "Texto en la tarta:";
             // 
             // labelNumberOfPeople
             // 
-            this.labelNumberOfPeople.AutoSize = true;
-            this.labelNumberOfPeople.Location = new System.Drawing.Point(100, 45);
-            this.labelNumberOfPeople.Name = "labelNumberOfPeople";
-            this.labelNumberOfPeople.Size = new System.Drawing.Size(238, 32);
-            this.labelNumberOfPeople.TabIndex = 0;
-            this.labelNumberOfPeople.Text = "Número de personas";
+            labelNumberOfPeople.AutoSize = true;
+            labelNumberOfPeople.Location = new Point(77, 36);
+            labelNumberOfPeople.Margin = new Padding(2, 0, 2, 0);
+            labelNumberOfPeople.Name = "labelNumberOfPeople";
+            labelNumberOfPeople.Size = new Size(179, 25);
+            labelNumberOfPeople.TabIndex = 0;
+            labelNumberOfPeople.Text = "Número de personas";
             // 
             // numericUpDownPeople
             // 
-            this.numericUpDownPeople.Location = new System.Drawing.Point(381, 38);
-            this.numericUpDownPeople.Name = "numericUpDownPeople";
-            this.numericUpDownPeople.Size = new System.Drawing.Size(240, 39);
-            this.numericUpDownPeople.TabIndex = 1;
-            this.numericUpDownPeople.ValueChanged += new System.EventHandler(this.numericUpDownPeople_ValueChanged);
+            numericUpDownPeople.Location = new Point(102, 66);
+            numericUpDownPeople.Margin = new Padding(2);
+            numericUpDownPeople.Name = "numericUpDownPeople";
+            numericUpDownPeople.Size = new Size(185, 31);
+            numericUpDownPeople.TabIndex = 1;
+            numericUpDownPeople.ValueChanged += NumericUpDownPeople_ValueChanged;
             // 
             // checkBoxLuxuryDecoration
             // 
-            this.checkBoxLuxuryDecoration.AutoSize = true;
-            this.checkBoxLuxuryDecoration.Location = new System.Drawing.Point(115, 116);
-            this.checkBoxLuxuryDecoration.Name = "checkBoxLuxuryDecoration";
-            this.checkBoxLuxuryDecoration.Size = new System.Drawing.Size(252, 36);
-            this.checkBoxLuxuryDecoration.TabIndex = 0;
-            this.checkBoxLuxuryDecoration.Text = "Decoración de Lujo";
-            this.checkBoxLuxuryDecoration.UseVisualStyleBackColor = true;
+            checkBoxLuxuryDecoration.AutoSize = true;
+            checkBoxLuxuryDecoration.Location = new Point(77, 117);
+            checkBoxLuxuryDecoration.Margin = new Padding(2);
+            checkBoxLuxuryDecoration.Name = "checkBoxLuxuryDecoration";
+            checkBoxLuxuryDecoration.Size = new Size(190, 29);
+            checkBoxLuxuryDecoration.TabIndex = 0;
+            checkBoxLuxuryDecoration.Text = "Decoración de Lujo";
+            checkBoxLuxuryDecoration.UseVisualStyleBackColor = true;
+            checkBoxLuxuryDecoration.CheckedChanged += CheckBoxLuxuryDecoration_CheckedChanged;
             // 
             // labelBudget
             // 
-            this.labelBudget.AutoSize = true;
-            this.labelBudget.Location = new System.Drawing.Point(100, 800);
-            this.labelBudget.Name = "labelBudget";
-            this.labelBudget.Size = new System.Drawing.Size(79, 32);
-            this.labelBudget.TabIndex = 2;
-            this.labelBudget.Text = "Coste:";
+            labelBudget.AutoSize = true;
+            labelBudget.Location = new Point(85, 345);
+            labelBudget.Margin = new Padding(2, 0, 2, 0);
+            labelBudget.Name = "labelBudget";
+            labelBudget.Size = new Size(61, 25);
+            labelBudget.TabIndex = 2;
+            labelBudget.Text = "Coste:";
             // 
-            // textBox1
+            // textBoxPrice
             // 
-            this.textBox1.Location = new System.Drawing.Point(209, 793);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 39);
-            this.textBox1.TabIndex = 3;
+            textBoxPrice.Location = new Point(102, 372);
+            textBoxPrice.Margin = new Padding(2);
+            textBoxPrice.Name = "textBoxPrice";
+            textBoxPrice.Size = new Size(194, 31);
+            textBoxPrice.TabIndex = 3;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 984);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.labelBudget);
-            this.Controls.Add(this.checkBoxLuxuryDecoration);
-            this.Controls.Add(this.labelNumberOfPeople);
-            this.Controls.Add(this.numericUpDownPeople);
-            this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.tabControl1.ResumeLayout(false);
-            this.tabDinner.ResumeLayout(false);
-            this.tabDinner.PerformLayout();
-            this.tabBirthday.ResumeLayout(false);
-            this.tabBirthday.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPeople)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(534, 441);
+            Controls.Add(textBoxPrice);
+            Controls.Add(labelBudget);
+            Controls.Add(checkBoxLuxuryDecoration);
+            Controls.Add(labelNumberOfPeople);
+            Controls.Add(numericUpDownPeople);
+            Controls.Add(tabControlTypeOfParty);
+            Margin = new Padding(2);
+            Name = "Form1";
+            Text = "Form1";
+            tabControlTypeOfParty.ResumeLayout(false);
+            tabDinner.ResumeLayout(false);
+            tabDinner.PerformLayout();
+            tabBirthday.ResumeLayout(false);
+            tabBirthday.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPeople).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private TabControl tabControl1;
+        private TabControl tabControlTypeOfParty;
         private TabPage tabDinner;
         private TabPage tabBirthday;
         private NumericUpDown numericUpDownPeople;
@@ -183,7 +198,7 @@
         private CheckBox checkBoxHealthyOption;
         private Label labelCakeText;
         private Label labelBudget;
-        private TextBox textBox1;
-        private TextBox CakeTextBox;
+        private TextBox textBoxPrice;
+        private TextBox cakeTextBox;
     }
 }

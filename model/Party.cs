@@ -1,31 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ejercicio25.model
+﻿namespace Ejercicio25.model
 {
     internal abstract class Party
     {
-        
-        const double DECORATION_PRICE_PER_PERSON_STD = 7.5d;
-        const double DECORATION_PRICE_PER_PERSON_LUXE = 15.0d;
-        const double DECORATION_PRICE_STD = 30.0d;
-        const double DECORATION_PRICE_LUXE = 50.0d;
-        const double FIXED_COST_PERSON = 25.0d;
+        private const double DECORATION_PRICE_PER_PERSON_STD = 7.5d;
+        private const double DECORATION_PRICE_PER_PERSON_LUXE = 15.0d;
+        private const double DECORATION_PRICE_STD = 30.0d;
+        private const double DECORATION_PRICE_LUXE = 50.0d;
+        private const double FIXED_COST_PERSON = 25.0d;
 
-        protected int NumOfPeople { get; set; }
-        bool IsDecorationStdOrLuxe { get; set; }
+        public int NumberOfPeople { get; set; }
+        public bool StyleDecorationStdOrLuxe { get; set; }
 
-        public double CalculateDecorationPrice()
+        protected Party() { }
+
+        protected Party(int numberOfPeople, bool styleOfDecorationStdOrLuxe)
+        {
+            NumberOfPeople = numberOfPeople;
+            StyleDecorationStdOrLuxe = styleOfDecorationStdOrLuxe;
+        }
+
+        protected double CalculateDecorationPrice()
         {
             return
-                NumOfPeople * ((IsDecorationStdOrLuxe ? 
+                NumberOfPeople * ((StyleDecorationStdOrLuxe ? 
                      DECORATION_PRICE_PER_PERSON_LUXE
                     : DECORATION_PRICE_PER_PERSON_STD
                 ) + FIXED_COST_PERSON)+
-                (IsDecorationStdOrLuxe ?
+                (StyleDecorationStdOrLuxe ?
                     DECORATION_PRICE_LUXE : DECORATION_PRICE_STD
                 );
         }
